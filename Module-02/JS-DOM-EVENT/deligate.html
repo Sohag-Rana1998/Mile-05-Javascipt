@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More event</title>
+</head>
+
+<body>
+  <section>
+    <h1>
+      Explore More event
+    </h1>
+    <ul id="li-container">
+      <li class="item">Lorem ipsum dolor sit amet.</li>
+      <li class="item">Eligendi similique a vero odit.</li>
+      <li class="item">Non harum perspiciatis dignissimos?</li>
+      <li class="item">Sed omnis maiores aspernatur!</li>
+      <li class="item">Ut doloribus eum soluta velit.</li>
+    </ul>
+    <button id="add-button">Add More</button>
+  </section>
+  <script>
+    document.getElementById('li-container').addEventListener('click', function (event) {
+      const listContainer = document.getElementById('li-container');
+      
+      listContainer.removeChild(event.target);
+
+    })
+
+    document.getElementById('add-button').addEventListener('click', function (event) {
+      
+      const listContainer = document.getElementById('li-container');
+      const li = document.createElement('li');
+      li.innerText = 'Adding new li.'
+      listContainer.appendChild(li)
+
+    })
+
+  </script>
+</body>
+
+</html>

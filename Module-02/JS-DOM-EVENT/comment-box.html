@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event listener</title>
+</head>
+
+<body>
+  <div id="comment-container">
+    <h1> Adding a new comment</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus natus deleniti veritatis quidem quam, sunt soluta
+      libero? Nihil sunt veritatis suscipit totam inventore, sequi temporibus libero! Pariatur accusamus sequi eos.</p>
+    <p>Porro explicabo libero sint natus est voluptatibus et ipsum minima veniam ipsa. Aliquam necessitatibus, debitis
+      ipsam exercitationem pariatur incidunt cumque possimus modi similique, odit beatae libero reprehenderit
+      dignissimos culpa nisi?</p>
+    <p>Ex velit adipisci magnam quam nobis. Veritatis ducimus corporis corrupti neque tempora alias eligendi ipsum,
+      cumque quis ex nulla minima fugit. Adipisci sed impedit quod iste ad mollitia, nam facilis!</p>
+    <p>Odit maxime, ducimus quaerat provident tenetur expedita ut similique nobis quisquam obcaecati voluptatem facilis
+      veniam sit nihil consequatur quod deleniti nam beatae dignissimos sed, aperiam, a cum. Voluptatibus, dolorem
+      atque!</p>
+
+
+  </div>
+
+  <textarea name="" id="text-area" cols="30" rows="10"></textarea> <br> <br>
+  <button id="post-button">POST</button>
+
+  <script>
+    document.getElementById('post-button').addEventListener('click', function () {
+      const inputField = document.getElementById('text-area');
+
+      const inputText = inputField.value;
+
+
+      const p = document.createElement('p');
+      p.innerText = inputText;
+
+      const commentContainer = document.getElementById('comment-container');
+
+      commentContainer.appendChild(p);
+
+      inputField.value = '';
+    })
+  </script>
+</body>
+
+</html>

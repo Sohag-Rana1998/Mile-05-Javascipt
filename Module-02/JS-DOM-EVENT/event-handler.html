@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom event handler</title>
+</head>
+
+<body>
+  <h1>DOM EVENT HANDLERS </h1>
+  <h2 id="change-text"> default text</h2>
+
+  <p id="input-text-display">text update here by update button</p>
+
+  <br>
+  <br>
+  <input type="text" id="input-field">
+  <button id="update-button">Update</button>
+  <br>
+  <br>
+  <button onclick="buttonEvent()"> Add by call function ONCLICK BUTTON</button>
+
+  <button id="event-listener"> Adding event listener</button>
+
+  <script>
+
+    // option:01
+    function buttonEvent() {
+      document.getElementById('change-text').innerText = 'The text is changed by clicking on event handler';
+    }
+
+    document.getElementById('event-listener').addEventListener('click', function () {
+      document.getElementById('change-text').innerText = 'Default text change by event listener'
+    })
+    // option:02
+    document.getElementById('update-button').addEventListener('click', function () {
+      const inputField = document.getElementById('input-field');
+
+      const inputText = inputField.value;
+
+      const textDisplay = document.getElementById('input-text-display');
+
+      textDisplay.innerText = inputText;
+
+      inputField.value = '';
+    })
+
+
+  </script>
+</body>
+
+</html>
